@@ -23,12 +23,39 @@
 
 <!-- ===== HEADER / HERO ===== -->
 <header class="header reveal">
-   <h1>Dulanjali Sethmini Manathunga</h1>
-  <img src="assets/profile.jpg" alt="Sethmini Manathunga" class="profile-img" />
-  <p class="tagline">
-    B.Sc. IT Undergraduate | Full-Stack Development | Cloud & DevOps Learner
-  </p>
+  <div class="header-content">
+    <img src="assets/profile.jpg" alt="Sethmini Manathunga" class="profile-img" />
+    <h1 id="hero-title">Dulanjali Sethmini Manathunga</h1>
+    <p class="tagline">
+      <span id="typing-text"></span><span class="cursor">|</span>
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#" class="btn btn-outline">Download CV 📄</a>
+    </div>
+  </div>
 </header>
+
+<!-- ===== CAREER / EDUCATION ===== -->
+<section id="career" class="section reveal">
+  <h2>🎓 Education & Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="timeline-date">2023 - Present</span>
+        <h3>B.Sc. (Hons) in Information Technology</h3>
+        <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <span class="timeline-date">2024</span>
+        <h3>Full-Stack Web Development Trainee</h3>
+        <p>Specializing in MERN stack and modern UI/UX design principles.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== ABOUT ===== -->
 <section id="about" class="section reveal">
@@ -47,25 +74,60 @@
 
 <!-- ===== SKILLS ===== -->
 <section id="skills" class="section reveal">
-  <h2>Skills</h2>
-  <ul class="skills">
-    <li>HTML, CSS, JavaScript, PHP, Python</li>
-    <li>C, C++, Java, Kotlin</li>
-    <li>Git & GitHub</li>
-    <li>Android Studio, VS Code, Eclipse, R Studio</li>
-    <li>SQL & Database Management</li>
-    <li>OOP Concepts & Problem Solving</li>
-  </ul>
+  <h2>🛠️ Technical Skills</h2>
+  <div class="skills-container">
+    <div class="skill-category">
+      <h3>Languages</h3>
+      <div class="skills-list">
+        <span class="skill-badge">HTML5</span>
+        <span class="skill-badge">CSS3</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">PHP</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Java</span>
+        <span class="skill-badge">Kotlin</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>Frameworks & Tools</h3>
+      <div class="skills-list">
+        <span class="skill-badge">React.js</span>
+        <span class="skill-badge">Node.js</span>
+        <span class="skill-badge">Express.js</span>
+        <span class="skill-badge">MongoDB</span>
+        <span class="skill-badge">Git & GitHub</span>
+        <span class="skill-badge">Figma</span>
+        <span class="skill-badge">Playwright</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <h3>Other</h3>
+      <div class="skills-list">
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">OOP</span>
+        <span class="skill-badge">Cloud Computing</span>
+        <span class="skill-badge">DevOps Basics</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ===== PROJECTS ===== -->
 <section id="projects" class="section reveal">
   <h2>📂 Projects</h2>
 
+  <div class="filter-btns">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web Dev</button>
+    <button class="filter-btn" data-filter="mobile">Mobile App</button>
+    <button class="filter-btn" data-filter="design">UI/UX Design</button>
+    <button class="filter-btn" data-filter="qa">QA / Automation</button>
+  </div>
+
   <div class="projects-grid">
 
     <!-- Portfolio -->
-    <div class="project-card reveal delay-1">
+    <div class="project-card reveal delay-1" data-category="web">
       <img src="assets/projects/portfolio.png" class="project-img" />
       <h3>🌐 Personal Portfolio Website</h3>
       <p>
@@ -76,7 +138,7 @@
     </div>
 
     <!-- Figma -->
-    <div class="project-card reveal delay-2">
+    <div class="project-card reveal delay-2" data-category="design">
       <img src="assets/projects/figma.png" class="project-img" />
       <h3>Food Delivery Mobile App – 🎨 UI/UX Design</h3>
       <p>
@@ -91,31 +153,29 @@
     </div>
 
     <!-- Wellness App -->
-    <div class="project-card reveal delay-3">
+    <div class="project-card reveal delay-3" data-category="mobile">
       <img src="assets/projects/wellness.png" class="project-img" />
-      <h3>Wellness Mobile Tracking Application - 🎨 UI/UX Design</h3>
+      <h3>Wellness Mobile Tracking Application</h3>
       <p>
         Android application to track wellness activities such as physical
         activity, mood, and health habits.
-        💻 Programming - Kotlin
       </p>
-      <p class="tech"><strong>🛠️ Tech:</strong>SQLite, Android Studio</p>
+      <p class="tech"><strong>🛠️ Tech:</strong> Kotlin, SQLite, Android Studio</p>
       <div class="project-links">
         <a href="https://mysliit-my.sharepoint.com/:v:/g/personal/it23764316_my_sliit_lk/IQCDJOh9MFqoSpcMAaPs33iMAVx2t4ioB9Tyc-O2Rr9h1-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=DAdnjz" 
         target="_blank">🎥 Video Demo</a>
       </div>
     </div>
 
-    <!-- MERN -->
-    <div class="project-card reveal delay-1">
+    <!-- MERN EllaTrip -->
+    <div class="project-card reveal delay-1" data-category="web">
       <img src="assets/projects/ellatrip.png" class="project-img" />
-      <h3>Full Stack Web Application (MERN)</h3>
+      <h3>EllaTrip Planning (MERN)</h3>
       <p>
-        Developed a MERN-based web application implementing CRUD operations and
+        Full stack web application for trip planning with CRUD operations and
         backend integration.
-        💻 Programming - JavaScript, Jsx
       </p>
-      <p class="tech"><strong>🛠️ Tech:</strong> React, Node.js, MongoDB</p>
+      <p class="tech"><strong>🛠️ Tech:</strong> MongoDB, Express, React, Node</p>
       <div class="project-links">
         <a href="https://github.com/Dula-se/Trip-Planning-" target="_blank">GitHub</a>
         <a href="https://mysliit-my.sharepoint.com/:v:/g/personal/it23764316_my_sliit_lk/IQD4hvsO8l4bQYgK8ylyy15OAXJ6mozKnvUoFKp2OCu0llw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=U7Jc1i" 
@@ -123,13 +183,12 @@
       </div>
     </div>
 
-    <div class="project-card reveal delay-2">
+    <!-- MERN Goal Tracker -->
+    <div class="project-card reveal delay-2" data-category="web">
       <img src="assets/projects/goaltracker.png" class="project-img" />
-      <h3>Full Stack Web Application (MERN) fancy site</h3>
+      <h3>Goal Tracker Application</h3>
       <p>
-        Developed a MERN-based web application implementing CRUD operations and
-        backend integration.
-        💻 Programming- JavaScript,Jsx
+        A sophisticated MERN-based web application for managing and tracking personal goals with backend integration.
       </p>
       <p class="tech"><strong>🛠️ Tech:</strong> React, Node.js, MongoDB</p>
       <div class="project-links">
@@ -139,15 +198,12 @@
       </div>
     </div>
 
-    <!-- Group Project -->
-    <div class="project-card reveal delay-3">
+    <!-- Auto Mart -->
+    <div class="project-card reveal delay-3" data-category="web">
       <img src="assets/projects/automart.png" class="project-img" />
-      <h3>University Group Project – MERN</h3>
+      <h3>A-A Auto Mart Car Sale</h3>
       <p>
-        🌐 Web Development - A-A Auto Mart Vehicle and Parts selling system
-        Vehicle buying & selling management system developed as a university
-        group project using MERN stack.
-        💻 Programming- JavaScript,Jsx
+        University group project. Vehicle buying & selling management system developed using MERN stack.
       </p>
       <p class="tech"><strong>🛠️ Tech:</strong> MongoDB, Express, React, Node</p>
       <div class="project-links">
@@ -157,31 +213,27 @@
       </div>
     </div>
 
-    <div class="project-card reveal delay-1">
-  <img src="assets/projects/playwright.png" class="project-img" />
-
-  <h3>Individual Project – Test Automation (Playwright)</h3>
-
-  <p>
-    🧪 Software Quality Assurance project developed as part of 
-    <strong>ITPM / IT3040</strong>.  
-    Automated functional and UI test scenarios for a real-time 
-    Singlish → Sinhala translation web application.
-    <br /><br />
-    🔍 Focus areas include real-time output validation, 
-    accuracy testing, robustness checks, and UI behavior verification.
-  </p>
-
-  <p class="tech">
-    <strong>🛠️ Tech:</strong> Playwright, TypeScript, Node.js, GitHub
-  </p>
-
-  <div class="project-links">
-    <a href="https://github.com/Dula-se/Assignment1" target="_blank">GitHub</a>
-    <a href="https://mysliit-my.sharepoint.com/:v:/g/personal/it23764316_my_sliit_lk/IQBIxmf_wZllTa1aM-VA_CknAZclqjwdR0u62z1GYp--LoQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Q1Vbjr"
-     target="_blank">🎥 Demo</a>
+    <!-- Playwright -->
+    <div class="project-card reveal delay-1" data-category="qa">
+      <img src="assets/projects/playwright.png" class="project-img" />
+      <h3>Test Automation (Playwright)</h3>
+      <p>
+        Automated functional and UI test scenarios for a real-time 
+        Singlish → Sinhala translation web application.
+      </p>
+      <p class="tech">
+        <strong>🛠️ Tech:</strong> Playwright, TypeScript, Node.js
+      </p>
+      <div class="project-links">
+        <a href="https://github.com/Dula-se/Assignment1" target="_blank">GitHub</a>
+        <a href="https://mysliit-my.sharepoint.com/:v:/g/personal/it23764316_my_sliit_lk/IQBIxmf_wZllTa1aM-VA_CknAZclqjwdR0u62z1GYp--LoQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Q1Vbjr"
+         target="_blank">🎥 Demo</a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<button class="back-to-top" id="back-to-top" title="Go to top">↑</button>
 
 
   </div>
@@ -224,47 +276,125 @@
 
 <!-- ===== JS ===== -->
 <script>
+  // THEME TOGGLE
   function toggleTheme() {
     document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
     document.querySelector(".theme-toggle").textContent =
       document.body.classList.contains("dark") ? "☀️" : "🌙";
   }
 
-const reveals = document.querySelectorAll(".reveal");
+  // Load Saved Theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    document.querySelector(".theme-toggle").textContent = "☀️";
+  }
 
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
+  // TYPING ANIMATION
+  const typingText = document.getElementById("typing-text");
+  const phrases = ["Full-Stack Developer", "B.Sc. IT Undergraduate", "Cloud & DevOps Learner", "UI/UX Enthusiast"];
+  let phraseIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentPhrase = phrases[phraseIdx];
+    if (isDeleting) {
+      typingText.textContent = currentPhrase.substring(0, charIdx - 1);
+      charIdx--;
+    } else {
+      typingText.textContent = currentPhrase.substring(0, charIdx + 1);
+      charIdx++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIdx === currentPhrase.length) {
+      isDeleting = true;
+      typeSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(type, typeSpeed);
+  }
+  type();
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll(".reveal");
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+
+  // BACK TO TOP
+  const btt = document.getElementById("back-to-top");
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      btt.classList.add("show");
+    } else {
+      btt.classList.remove("show");
     }
   });
-});
+  btt.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // PROJECT FILTERING
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Toggle Active Button
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      projectCards.forEach(card => {
+        if (filter === "all" || card.getAttribute("data-category") === filter) {
+          card.style.display = "flex";
+          setTimeout(() => { card.style.opacity = "1"; card.style.transform = "scale(1)"; }, 10);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "scale(0.8)";
+          setTimeout(() => { card.style.display = "none"; }, 300);
+        }
+      });
+    });
+  });
+
+  // NAVBAR ACTIVE LINK
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
 </script>
-
-
-<script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-</script><script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
   (function(){
