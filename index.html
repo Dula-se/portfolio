@@ -276,8 +276,8 @@
     </p>
 
     <div class="contact-info">
-      <a href="mailto:nanayakkarankdbm@email.com">
-        <span>📧</span> nanayakkarankdbm@email.com
+      <a href="mailto:nanayakkarankdbm@gmail.com">
+        <span>📧</span> nanayakkarankdbm@gmail.com
       </a>
     </div>
 
@@ -482,8 +482,9 @@
     status.style.display = "none";
 
     // IMPORTANT: Replace "YOUR_TEMPLATE_ID" with your actual Template ID from EmailJS
+    // You can find this in your EmailJS Dashboard > Email Templates
     const serviceID = "service_hpyomif";
-    const templateID = "YOUR_TEMPLATE_ID"; // <-- FIX THIS
+    const templateID = "YOUR_TEMPLATE_ID"; // <--- You MUST replace this with your actual Template ID
 
     emailjs.sendForm(serviceID, templateID, this)
       .then(() => {
@@ -496,7 +497,7 @@
         this.reset();
       }, (error) => {
         console.error("EmailJS Error:", error);
-        status.textContent = "Failed to send. Please check your Template ID or try again. ❌";
+        status.textContent = "Failed to send. Please ensure you have replaced 'YOUR_TEMPLATE_ID' with your actual EmailJS Template ID. ❌";
         status.style.display = "block";
         status.style.backgroundColor = "rgba(244, 63, 94, 0.1)";
         status.style.color = "#f43f5e";
