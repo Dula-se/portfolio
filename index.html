@@ -9,26 +9,58 @@
 
 <body>
 <nav class="navbar">
-  <div class="logo">Sethmini
-  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-  </div>
+  <div class="scroll-progress"></div>
+  <div class="logo">Sethmini</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </li>
   </ul>
 </nav>
 
 
 <!-- ===== HEADER / HERO ===== -->
 <header class="header reveal">
+  <div class="header-bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
   <div class="header-content">
-    <img src="assets/profile.jpg" alt="Sethmini Manathunga" class="profile-img" />
+    <div class="profile-container">
+      <img src="assets/profile.jpg" alt="Sethmini Manathunga" class="profile-img" id="profile-img" />
+      <div class="image-controls">
+        <label for="size-slider">Photo Size</label>
+        <input type="range" id="size-slider" min="100" max="300" value="180" oninput="adjustImageSize(this.value)">
+      </div>
+    </div>
     <h1 id="hero-title">Dulanjali Sethmini Manathunga</h1>
     <p class="tagline">
       <span id="typing-text"></span><span class="cursor">|</span>
     </p>
+    
+    <div class="quick-stats">
+      <div class="stat-item">
+        <span class="stat-num">2+</span>
+        <span class="stat-label">Years Learning</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Technologies</span>
+      </div>
+    </div>
+
     <div class="hero-btns">
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="#" class="btn btn-outline">Download CV 📄</a>
@@ -70,6 +102,33 @@
     DevOps. I am passionate about continuous learning, problem-solving, and
     developing scalable, real-world software solutions.
   </p>
+</section>
+
+<!-- ===== SERVICES / WHAT I DO ===== -->
+<section id="services" class="section reveal">
+  <h2>🚀 What I Do</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3>Web Development</h3>
+      <p>Building responsive, high-performance websites using modern frameworks and best practices.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Mobile Solutions</h3>
+      <p>Designing and developing intuitive mobile applications with Kotlin and Android Studio.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>UI/UX Design</h3>
+      <p>Creating beautiful, user-centered interfaces with Figma that provide seamless experiences.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">☁️</div>
+      <h3>Cloud & DevOps</h3>
+      <p>Exploring cloud technologies and implementing CI/CD pipelines for efficient deployment.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ===== SKILLS ===== -->
@@ -279,15 +338,37 @@
   // THEME TOGGLE
   function toggleTheme() {
     document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-    document.querySelector(".theme-toggle").textContent =
-      document.body.classList.contains("dark") ? "☀️" : "🌙";
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateThemeIcons(isDark);
+  }
+
+  function updateThemeIcons(isDark) {
+    const sunIcon = document.querySelector(".theme-toggle .sun");
+    const moonIcon = document.querySelector(".theme-toggle .moon");
+    if (isDark) {
+      sunIcon.style.display = "block";
+      moonIcon.style.display = "none";
+    } else {
+      sunIcon.style.display = "none";
+      moonIcon.style.display = "block";
+    }
   }
 
   // Load Saved Theme
-  if (localStorage.getItem("theme") === "dark") {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
     document.body.classList.add("dark");
-    document.querySelector(".theme-toggle").textContent = "☀️";
+    updateThemeIcons(true);
+  } else {
+    updateThemeIcons(false);
+  }
+
+  // IMAGE SIZE ADJUSTMENT
+  function adjustImageSize(size) {
+    const img = document.getElementById("profile-img");
+    img.style.width = size + "px";
+    img.style.height = size + "px";
   }
 
   // TYPING ANIMATION
@@ -334,6 +415,14 @@
   };
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
+
+  // SCROLL PROGRESS
+  window.addEventListener("scroll", () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector(".scroll-progress").style.width = scrolled + "%";
+  });
 
   // BACK TO TOP
   const btt = document.getElementById("back-to-top");
