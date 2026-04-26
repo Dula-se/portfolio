@@ -484,9 +484,9 @@
     // IMPORTANT: Replace "YOUR_TEMPLATE_ID" with your actual Template ID from EmailJS
     // You can find this in your EmailJS Dashboard > Email Templates
     const serviceID = "service_hpyomif";
-    const templateID = "YOUR_TEMPLATE_ID"; // <--- You MUST replace this with your actual Template ID
+    const templateID = "template_6zqszzh"; // <--- You MUST replace this with your actual Template ID
 
-    emailjs.sendForm(serviceID, templateID, this)
+      emailjs.sendForm(serviceID, templateID, this)
       .then(() => {
         status.textContent = "Message sent successfully! ✅";
         status.style.display = "block";
@@ -497,7 +497,12 @@
         this.reset();
       }, (error) => {
         console.error("EmailJS Error:", error);
-        status.textContent = "Failed to send. Please ensure you have replaced 'YOUR_TEMPLATE_ID' with your actual EmailJS Template ID. ❌";
+        // Show specific error if template ID is missing
+        if (templateID === "YOUR_TEMPLATE_ID") {
+          status.textContent = "Error: You haven't replaced 'YOUR_TEMPLATE_ID' with your actual EmailJS Template ID. ❌";
+        } else {
+          status.textContent = "Failed to send: " + (error.text || "Check your IDs and try again.") + " ❌";
+        }
         status.style.display = "block";
         status.style.backgroundColor = "rgba(244, 63, 94, 0.1)";
         status.style.color = "#f43f5e";
