@@ -267,37 +267,49 @@
 </section>
 
 <button class="back-to-top" id="back-to-top" title="Go to top">↑</button>
-
-
-  </div>
-</section>
-
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="contact-section reveal">
   <div class="contact-card">
-    <h2>Contact Me</h2>
+    <h2>Get In Touch</h2>
     <p class="contact-subtitle">
-      I’m open to internships, projects, and collaborations.
+      Have a project in mind or just want to say hi? I'm always open to new opportunities and collaborations.
     </p>
 
-    <p>
-      📧 <a href="mailto:nanayakkarankdbm@email.com">
-        nanayakkarankdbm@email.com
+    <div class="contact-info">
+      <a href="mailto:nanayakkarankdbm@email.com">
+        <span>📧</span> nanayakkarankdbm@email.com
       </a>
-    </p>
+    </div>
 
     <div class="contact-socials">
-      🐙 <a href="https://github.com/Dula-se/" target="_blank">GitHub</a>
-      🔗 <a href="https://www.linkedin.com/in/dulanjali-manathunga-580903335/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Dula-se/" target="_blank">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/dulanjali-manathunga-580903335/" target="_blank">🔗 LinkedIn</a>
     </div>
 
     <!-- ✅ CONTACT FORM -->
+    <!-- You can use Formspree (https://formspree.io/) as a zero-config alternative -->
+    <!-- Just change the action to your Formspree endpoint -->
     <form id="contact-form" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message 🚀</button>
-      <p id="form-status"></p>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">
+        <span>Send Message</span>
+        <span class="btn-icon">🚀</span>
+      </button>
+      <div id="form-status"></div>
     </form>
   </div>
 </section>
@@ -454,27 +466,43 @@
 
 <script>
   (function(){
+    // Initialize EmailJS with your Public Key
     emailjs.init("HtyHfpg5bGNa6MUSf");
   })();
 
   document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
+    const btn = document.getElementById("submit-btn");
     const status = document.getElementById("form-status");
-    status.textContent = "Sending... ⏳";
+    
+    // UI Update
+    btn.disabled = true;
+    btn.innerHTML = "Sending... ⏳";
+    status.style.display = "none";
 
-    emailjs.sendForm(
-      "service_hpyomif",
-      "YOUR_TEMPLATE_ID",
-      this
-    ).then(() => {
-      status.textContent = "Message sent successfully ✅";
-      status.style.color = "lime";
-      this.reset();
-    }, () => {
-      status.textContent = "Failed to send message ❌";
-      status.style.color = "red";
-    });
+    // IMPORTANT: Replace "YOUR_TEMPLATE_ID" with your actual Template ID from EmailJS
+    const serviceID = "service_hpyomif";
+    const templateID = "YOUR_TEMPLATE_ID"; // <-- FIX THIS
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        status.textContent = "Message sent successfully! ✅";
+        status.style.display = "block";
+        status.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
+        status.style.color = "#10b981";
+        btn.disabled = false;
+        btn.innerHTML = "<span>Send Message</span><span class='btn-icon'>🚀</span>";
+        this.reset();
+      }, (error) => {
+        console.error("EmailJS Error:", error);
+        status.textContent = "Failed to send. Please check your Template ID or try again. ❌";
+        status.style.display = "block";
+        status.style.backgroundColor = "rgba(244, 63, 94, 0.1)";
+        status.style.color = "#f43f5e";
+        btn.disabled = false;
+        btn.innerHTML = "<span>Send Message</span><span class='btn-icon'>🚀</span>";
+      });
   });
 </script>
 
