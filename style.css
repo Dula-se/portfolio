@@ -199,8 +199,8 @@ body.dark .theme-toggle {
 .profile-container {
   position: relative;
   display: inline-block;
-  margin-bottom: 45px;
-  padding: 8px;
+  margin-bottom: 50px;
+  padding: 10px;
   border-radius: 50%;
   background: linear-gradient(
     135deg,
@@ -210,27 +210,53 @@ body.dark .theme-toggle {
   );
   background-size: 200% 200%;
   animation: gradientRotate 6s ease infinite;
-  box-shadow: 0 20px 45px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 25px 55px rgba(99, 102, 241, 0.35);
   transition:
     transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.5s ease;
 }
 
 .profile-container:hover {
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.45);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 35px 70px rgba(99, 102, 241, 0.5);
 }
 
 .profile-img {
-  width: 320px;
-  height: 320px;
+  width: 420px !important;
+  height: 420px !important;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top; /* ADD THIS */
-  border: 5px solid var(--card);
+  object-position: center top;
+  border: 6px solid var(--card);
   display: block;
   transition: all 0.4s ease;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .profile-container {
+    padding: 7px;
+  }
 }
 
 @keyframes gradientRotate {
