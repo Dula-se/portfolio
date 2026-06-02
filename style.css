@@ -933,3 +933,280 @@ html {
     height: 260px;
   }
 }
+/* ================= FULL MOBILE RESPONSIVE FIX ================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* HERO */
+  .header {
+    padding: 25px 15px 45px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    padding: 25px 10px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .profile-container {
+    padding: 7px;
+  }
+
+  .profile-img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2.3rem;
+    line-height: 1.15;
+    margin-bottom: 15px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-btns .btn {
+    width: 220px;
+    justify-content: center;
+    padding: 11px 18px;
+  }
+
+  /* SECTIONS */
+  .section {
+    margin: 60px auto;
+    padding: 0 18px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .section h2::after {
+    display: none;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 24px;
+    text-align: center;
+  }
+
+  /* SKILLS */
+  .skills-list {
+    justify-content: center;
+  }
+
+  .skill-badge {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    padding-left: 24px;
+  }
+
+  .timeline-item::after {
+    left: -30px;
+  }
+
+  /* FILTER BUTTONS */
+  .filter-btns {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-img {
+    height: 170px;
+  }
+
+  .project-links {
+    justify-content: center;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 70px 15px;
+  }
+
+  .contact-card {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
+  .contact-card h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .contact-info a {
+    font-size: 14px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .contact-socials {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .contact-socials a {
+    width: 180px;
+    text-align: center;
+  }
+
+  .contact-form {
+    gap: 16px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .contact-form button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  .footer {
+    font-size: 13px;
+    padding: 18px 10px;
+  }
+
+  /* BACK TO TOP */
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .header {
+    padding: 20px 12px 40px;
+  }
+
+  .profile-img {
+    width: 210px;
+    height: 210px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .hero-btns .btn {
+    width: 200px;
+  }
+
+  .section {
+    margin: 50px auto;
+    padding: 0 15px;
+  }
+
+  .contact-card {
+    padding: 24px 16px;
+  }
+
+  .project-img {
+    height: 150px;
+  }
+}
+
+
