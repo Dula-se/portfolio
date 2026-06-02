@@ -4,7 +4,7 @@ This is my personal portfolio website built to showcase my projects, skills, and
 
 ## 🚀 Live Preview
 
-*https://dula-se.github.io/portfolio/#skills
+*https://dula-se.github.io/portfolio/
 
 ---
 
