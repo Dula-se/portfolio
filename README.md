@@ -84,7 +84,7 @@ npm start
 
 ## 📬 Contact
 
-* Email: nanayakkarankdbm@gmail.com
+* Email: dulanjalisethmini@gmail.com
 * LinkedIn: www.linkedin.com/in/dulanjali-manathunga-580903335
 * GitHub: https://github.com/Dula-se
 
