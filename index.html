@@ -405,26 +405,45 @@
     <!-- You can use Formspree (https://formspree.io/) as a zero-config alternative -->
     <!-- Just change the action to your Formspree endpoint -->
     <form id="contact-form" class="contact-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Dulanjali Sethmini" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Dulanjali@example.com" required>
-      </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your name" 
+            required
+          >
+        </div>
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required></textarea>
-      </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email" 
+            required
+          >
+        </div>
 
-      <button type="submit" id="submit-btn">C
-        <span>Send Message</span>
-        <span class="btn-icon">🚀</span>
-      </button>
-      <div id="form-status"></div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="4" 
+            placeholder="Write your message here..." 
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" id="submit-btn">
+          <span>Send Message</span>
+          <span class="btn-icon">🚀</span>
+        </button>
+
+        <div id="form-status"></div>
     </form>
   </div>
 </section>
@@ -589,50 +608,50 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <script>
-  (function(){
-    // Initialize EmailJS with your Public Key
+  (function () {
     emailjs.init("HtyHfpg5bGNa6MUSf");
   })();
 
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
+  const contactForm = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const statusBox = document.getElementById("form-status");
+
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const btn = document.getElementById("submit-btn");
-    const status = document.getElementById("form-status");
-    
-    // UI Update
-    btn.disabled = true;
-    btn.innerHTML = "Sending... ⏳";
-    status.style.display = "none";
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Sending... ⏳";
 
-    // IMPORTANT: Replace "YOUR_TEMPLATE_ID" with your actual Template ID from EmailJS
-    // You can find this in your EmailJS Dashboard > Email Templates
+    statusBox.style.display = "none";
+
     const serviceID = "service_m27q8ym";
-    const templateID = "template_r16vqc5"; // <--- You MUST replace this with your actual Template ID
+    const templateID = "template_r16vqc5";
 
-      emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        status.textContent = "Message sent successfully! ✅";
-        status.style.display = "block";
-        status.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
-        status.style.color = "#10b981";
-        btn.disabled = false;
-        btn.innerHTML = "<span>Send Message</span><span class='btn-icon'>🚀</span>";
-        this.reset();
-      }, (error) => {
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(function () {
+        statusBox.textContent = "Message sent successfully! ✅";
+        statusBox.style.display = "block";
+        statusBox.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
+        statusBox.style.color = "#10b981";
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "<span>Send Message</span><span class='btn-icon'>🚀</span>";
+
+        contactForm.reset();
+      })
+      .catch(function (error) {
         console.error("EmailJS Error:", error);
-        // Show specific error if template ID is missing
-        if (templateID === "template_r16vqc5") {
-          status.textContent = "Error: You haven't replaced 'template_r16vqc5' with your actual EmailJS Template ID. ❌";
-        } else {
-          status.textContent = "Failed to send: " + (error.text || "Check your IDs and try again.") + " ❌";
-        }
-        status.style.display = "block";
-        status.style.backgroundColor = "rgba(244, 63, 94, 0.1)";
-        status.style.color = "#f43f5e";
-        btn.disabled = false;
-        btn.innerHTML = "<span>Send Message</span><span class='btn-icon'>🚀</span>";
+
+        statusBox.textContent = "Failed to send message. Please check EmailJS settings. ❌";
+        statusBox.style.display = "block";
+        statusBox.style.backgroundColor = "rgba(244, 63, 94, 0.1)";
+        statusBox.style.color = "#f43f5e";
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "<span>Send Message</span><span class='btn-icon'>🚀</span>";
       });
   });
 </script>
