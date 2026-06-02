@@ -14,8 +14,10 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#soft-skills">Soft Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="assets/Dulanjali_Sethmini_CV.pdf" target="_blank">CV</a></li>
     <li>
       <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
         <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -48,9 +50,20 @@
       </p>
 
       <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#" class="btn btn-outline">Download CV 📄</a>
-      </div>
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+
+          <a href="assets/Dulanjali_Sethmini_CV.pdf" 
+            class="btn btn-outline" 
+            target="_blank">
+            View CV 👁️
+          </a>
+
+          <a href="assets/Dulanjali_Sethmini_CV.pdf" 
+            class="btn btn-outline" 
+            download="Dulanjali_Sethmini_Manathunga_CV.pdf">
+            Download CV 📄
+          </a>
+       </div>
 
     </div>
   </div>
@@ -75,39 +88,43 @@
   <h2>About Me</h2>
   <p>
     I am a B.Sc. Information Technology undergraduate with a strong interest in
-    full-stack web development and cloud technologies. I have experience
-    building responsive web applications using modern tools and best practices.
+    frontend and full-stack web development. I enjoy building responsive,
+    user-friendly applications using technologies such as React, Node.js,
+    Express.js, MongoDB, Java, and Spring Boot.
   </p>
   <p>
-    Currently, I am expanding my knowledge in networking, cloud computing, and
-    DevOps. I am passionate about continuous learning, problem-solving, and
-    developing scalable, real-world software solutions.
+    I am currently improving my skills in software engineering, REST API
+    development, database integration, cloud fundamentals, and DevOps practices.
+    I am looking for an internship opportunity where I can contribute to real
+    projects, learn from industry experience, and grow as a software developer.
   </p>
 </section>
 
 <!-- ===== SERVICES / WHAT I DO ===== -->
 <section id="services" class="section reveal">
-  <h2>🚀 What I Do</h2>
+  <h2>🚀 Areas of Interest</h2>
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">🌐</div>
-      <h3>Web Development</h3>
-      <p>Building responsive, high-performance websites using modern frameworks and best practices.</p>
+        <h3>Frontend Development</h3>
+        <p>Building responsive and user-friendly interfaces using HTML, CSS, JavaScript, and React.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">📱</div>
-      <h3>Mobile Solutions</h3>
-      <p>Designing and developing intuitive mobile applications with Kotlin and Android Studio.</p>
+        <h3>Full-Stack Development</h3>
+        <p>Developing web applications with REST APIs, backend logic, and database integration.</p>
+
     </div>
     <div class="service-card">
       <div class="service-icon">🎨</div>
-      <h3>UI/UX Design</h3>
-      <p>Creating beautiful, user-centered interfaces with Figma that provide seamless experiences.</p>
+       <h3>UI/UX Design</h3>
+       <p>Designing clean and user-centered interfaces using Figma.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">☁️</div>
-      <h3>Cloud & DevOps</h3>
-      <p>Exploring cloud technologies and implementing CI/CD pipelines for efficient deployment.</p>
+       <h3>Mobile App Development</h3>
+       <p>Creating simple and useful Android applications using Kotlin and SQLite.</p>
+
     </div>
   </div>
 </section>
@@ -138,7 +155,7 @@
         <span class="skill-badge">Git & GitHub</span>
         <span class="skill-badge">Figma</span>
         <span class="skill-badge">Playwright</span>
-        <span class="skill-badge">Springboot Maven</span>
+        <span class="skill-badge">Spring boot, Maven</span>
         <span class="skill-badge">Linux</span>
       </div>
     </div>
@@ -150,7 +167,23 @@
         <span class="skill-badge">Cloud Computing</span>
         <span class="skill-badge">DevOps Basics</span>
         <span class="skill-badge">Postman</span>
-        <span class="skill-badge">JIra and Trallo</span>
+        <span class="skill-badge">Jira and Trello</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="soft-skills" class="section reveal">
+  <h2>🤝 Soft Skills</h2>
+  <div class="skills-container">
+    <div class="skill-category">
+      <div class="skills-list">
+        <span class="skill-badge">Teamwork</span>
+        <span class="skill-badge">Problem Solving</span>
+        <span class="skill-badge">Communication</span>
+        <span class="skill-badge">Time Management</span>
+        <span class="skill-badge">Adaptability</span>
+        <span class="skill-badge">Self Learning</span>
       </div>
     </div>
   </div>
@@ -280,7 +313,8 @@
       <img src="assets/projects/unilearn.png" class="project-img" />
       <h3>Uni Learn HUB+</h3>
       <p>
-        University group project. Learn Hub that is including nivesity notes, papers, resources, discussion for the students, developed using MERN stack.
+         A MERN-based university learning platform that allows students to access notes,
+          past papers, learning resources, and discussions in one place.
       </p>
       <p class="tech"><strong>🛠️ Tech:</strong> MongoDB, Express, React, Node</p>
       <div class="project-links">
@@ -309,7 +343,8 @@
       <img src="assets/projects/smartuni.png" class="project-img" />
       <h3>Smart Campus</h3>
       <p>
-        University group project. Smart university site developed using Spring boot
+        A university management system developed using Spring Boot and MongoDB,
+        including booking and campus service management features.
       </p>
       <p class="tech"><strong>🛠️ Tech:</strong> MongoDB, Spring Boot, Vs</p>
       <div class="project-links">
@@ -324,7 +359,8 @@
       <img src="assets/projects/smartunipost.png" class="project-img" />
       <h3>Smart Campus Postman</h3>
       <p>
-        University group project. Smart university site developed using Spring boot with MongoDB and postman
+        A university management system developed using Spring Boot and MongoDB,
+        including booking and campus service management features.
       </p>
       <p class="tech"><strong>🛠️ Tech:</strong> MongoDB, Spring Boot, Vs, postman</p>
       <div class="project-links">
@@ -386,7 +422,12 @@
 
 
 <footer class="footer">
-  © 2026 Sethmini Manathunga
+  <p>© 2026 Dulanjali Sethmini Manathunga. All rights reserved.</p>
+  <p>
+    <a href="https://github.com/Dula-se/" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/dulanjali-manathunga-580903335/" target="_blank">LinkedIn</a> |
+    <a href="assets/Dulanjali_Sethmini_CV.pdf" target="_blank">CV</a>
+  </p>
 </footer>
 
 <!-- ===== JS ===== -->
@@ -422,7 +463,12 @@
 
   // TYPING ANIMATION
   const typingText = document.getElementById("typing-text");
-  const phrases = ["Full-Stack Developer", "B.Sc. IT Undergraduate", "Cloud & DevOps Learner", "UI/UX Enthusiast"];
+  const phrases = [
+    "Software Engineering Undergraduate",
+    "Frontend & Full-Stack Developer",
+    "MERN Stack Developer",
+    "Java | Spring Boot | React Learner"
+  ];
   let phraseIdx = 0;
   let charIdx = 0;
   let isDeleting = false;
@@ -568,8 +614,8 @@
       }, (error) => {
         console.error("EmailJS Error:", error);
         // Show specific error if template ID is missing
-        if (templateID === "YOUR_TEMPLATE_ID") {
-          status.textContent = "Error: You haven't replaced 'YOUR_TEMPLATE_ID' with your actual EmailJS Template ID. ❌";
+        if (templateID === "template_6zqszzh") {
+          status.textContent = "Error: You haven't replaced 'template_6zqszzh' with your actual EmailJS Template ID. ❌";
         } else {
           status.textContent = "Failed to send: " + (error.text || "Check your IDs and try again.") + " ❌";
         }
